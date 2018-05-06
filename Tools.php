@@ -73,8 +73,8 @@ class Tools{
             $params[CURLOPT_POST] = true;
             $params[CURLOPT_POSTFIELDS] = $data;
         }
-        $params[CURLOPT_SSL_VERIFYPEER] = false;//请求https时设置,还有其他解决方案
-        $params[CURLOPT_SSL_VERIFYHOST] = false;//请求https时,其他方案查看其他博文
+        $params[CURLOPT_SSL_VERIFYPEER] = false;//请求https时设置不验证证书
+        $params[CURLOPT_SSL_VERIFYHOST] = false;//请求https时不校验证书，生产环境建议校验证书，需上传正确证书
         curl_setopt_array($ch, $params); //传入curl参数
         $content = curl_exec($ch); //执行
         curl_close($ch); //关闭连接
