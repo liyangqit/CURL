@@ -24,7 +24,7 @@ class Tools{
     {
        return file_get_contents('php://input');
     }
-    /**
+    /***
     使用curl方式实现get或post请求
     @param $url 请求的url地址
     @param $data 发送的post数据 如果为空则为get方式请求
